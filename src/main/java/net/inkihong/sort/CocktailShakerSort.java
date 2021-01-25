@@ -1,24 +1,8 @@
-import java.util.Arrays;
+package net.inkihong.sort;
 
 public class CocktailShakerSort {
 
-    public static void main(String[] args) {
-        int[] myArray = new int[10];
-
-        for (int i = 0; i < myArray.length; i++) {
-            myArray[i] = (int) (Math.random() * 500);
-        }
-
-        System.out.println("my array before sorting: ");
-        System.out.println(Arrays.toString(myArray));
-
-        myArray = sort(myArray);
-
-        System.out.println("my array after sorting: ");
-        System.out.println(Arrays.toString(myArray));
-    }
-
-    public static int[] sort(int[] arr) {
+    public int[] sort(int[] arr) {
         boolean isSwapped;
         do {
             isSwapped = false;
