@@ -28,7 +28,7 @@ public class CocktailShakerSortTest {
         boolean isSorted = false;
 
         for (int i = 0; i < myArray.length-1; i++) {
-            isSorted = myArray[i] < myArray[i+1];
+            isSorted = myArray[i] <= myArray[i+1];
         }
 
         assertEquals(true, isSorted);
