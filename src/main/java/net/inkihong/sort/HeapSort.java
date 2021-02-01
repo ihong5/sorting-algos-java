@@ -2,20 +2,27 @@ package net.inkihong.sort;
 
 public class HeapSort {
 
-    public int[] sort(int[] arr) {
+    public int[] sort(int[] arr) throws Exception {
         int n = arr.length;
 
-        for (int i = ((n/2)-1); i >= 0; i--) {
-            heapify(arr, n, i);
+        if (n > 1) {
+            for (int i = ((n/2)-1); i >= 0; i--) {
+                heapify(arr, n, i);
+            }
+    
+            for (int i = n-1; i > 0; i--) {
+                int temp = arr[0];
+                arr[0] = arr[i];
+                arr[i] = temp;
+    
+                heapify(arr, i, 0);
+            }
+        } else if (n == 1) {
+            // do nothing
+        } else {
+            throw new Exception("cannot sort an empty array");
         }
 
-        for (int i = n-1; i > 0; i--) {
-            int temp = arr[0];
-            arr[0] = arr[i];
-            arr[i] = temp;
-
-            heapify(arr, i, 0);
-        }
         return arr;
     }
 

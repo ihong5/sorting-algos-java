@@ -32,7 +32,7 @@ public class BubbleSortTest {
                 isSorted = myArray[i] <= myArray[i+1];
             }
         } catch (Exception ex) {
-            ex.printStackTrace();
+            assertEquals(false, isSorted);
         }
 
         assertEquals(true, isSorted);
